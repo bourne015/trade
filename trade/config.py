@@ -1,0 +1,4 @@
+API_KEY = ""
+SECRET_KEY = ""
+PASSPHRASE = ""
+SIMULATE_TRADE = True
