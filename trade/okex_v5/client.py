@@ -44,6 +44,8 @@ class Client:
             response = self._session.request(method, url, headers=header, data=body)
         except Exception as e:
             print(f"request failed with error: {e}")
+        if response.ok is not True:
+            print("request failed, response:", response.status_code)
         return response.json() if response else {}
 
     def _generage_sign(self, timestamp, method, request_path, body, secret_key):
