@@ -1,5 +1,5 @@
 from .okex_v5 import MarketData, Trade
-import config
+from . import config
 
 
 if __name__ == "__main__":
@@ -9,7 +9,7 @@ if __name__ == "__main__":
     simulate_trade = config.SIMULATE_TRADE
 
     market = MarketData(api_key, sec_key, passphrase, simulate_trade)
-    all_info = market.all(instType="SWAP")
+    all_info = market.get_tickers(instType="SWAP")
     # print("all info:", all_info.get("data"))
     # data = all_info.get("data")
     # for i, x in enumerate(data):
