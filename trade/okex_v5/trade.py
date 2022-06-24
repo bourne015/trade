@@ -86,11 +86,33 @@ class Trade(Client):
         """
         endpoint = "/api/v5/trade/order"
 
-    def get_order_list(self):
+    def get_order_list(
+        self,
+        instType=None,
+        uly=None,
+        instId=None,
+        ordType=None,
+        state=None,
+        after=None,
+        before=None,
+        limit=None
+    ):
         """
         Retrieve all incomplete orders under the current account.
         """
         endpoint = "/api/v5/trade/orders-pending"
+        params = dict(
+            instType=instType,
+            uly=uly,
+            instId=instId,
+            ordType=ordType,
+            state=state,
+            after=after,
+            before=before,
+            limit=limit
+        )
+        res = self._request("GET", endpoint, params)
+        return res["data"]
 
     def place_algo_order(self):
         """

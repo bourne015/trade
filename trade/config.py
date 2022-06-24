@@ -1,4 +1,6 @@
-API_KEY = ""
-SECRET_KEY = ""
-PASSPHRASE = ""
-SIMULATE_TRADE = True
+okex_config = dict(
+    api_key = "",
+    secret_key = "",
+    passphrase = "",
+    simulate_trade = True
+)

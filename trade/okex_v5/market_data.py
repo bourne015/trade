@@ -17,3 +17,12 @@ class MarketData(Client):
         if uly:
             params["uly"] = uly
         return self._request("GET", endpoint, params)
+
+    def get_ticker(self, instId):
+        """
+        Retrieve the latest price snapshot,
+        best bid/ask price, and trading volume in the last 24 hours.
+        """
+        endpoint = "/api/v5/market/ticker"
+        params = {"instId": instId}
+        return self._request("GET", endpoint, params)
